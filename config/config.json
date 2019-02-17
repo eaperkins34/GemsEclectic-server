@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "emaleigh34",
+    "database": "gemseclectic",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "emaleigh34",
+    "database": "gemseclectic",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "igfyynimqmkzyi",
+    "password": "f349aee37c1ec9bb19edd2126ddf4dbc3bdaefa569cbc08402d392dec3fc6cd9",
+    "database": "d5dqhi248eosre",
+    "host": "ec2-54-83-23-121.compute-1.amazonaws.com",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}
