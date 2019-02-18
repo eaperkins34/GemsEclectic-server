@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const Jewelry = require('../db').import('../models/jewelry');
+const validate = require('../middleware/validateUserSession')
 
-router.post('/create', (req, res) => {
+router.post('/create', validate, (req, res) => {
     Jewelry.create(req.body)
     .then(function(newJewelry) {
         res.send(newJewelry);
@@ -10,7 +11,7 @@ router.post('/create', (req, res) => {
     )
 })
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id', validate, (req, res) => {
     Jewelry.destroy({ where: { id: req.params.id }})
         .then(jewelry => res.status(200).json(jewelry))
         .catch(err => res.json(req.errors))
