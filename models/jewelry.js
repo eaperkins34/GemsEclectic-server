@@ -16,7 +16,11 @@ module.exports = (sequelize, DataTypes) => {
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false
-    }
+    },
+    available: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
   }, {});
   Jewelry.associate = function(models) {
     // associations can be defined here

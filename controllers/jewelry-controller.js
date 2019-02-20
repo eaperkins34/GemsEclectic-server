@@ -29,4 +29,10 @@ router.get('/:id', (req,res) => {
         .catch(error => res.status(500).json(error));
 })
 
+router.get('/available', (req, res) => {
+    Jewelry.findAll({where: {available: true}})
+        .then(jewelry => res.status(200).json(jewelry))
+        .catch(err => res.status(500).json({error:err}))
+})
+
 module.exports = router;
