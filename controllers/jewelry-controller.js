@@ -35,4 +35,15 @@ router.get('/available', (req, res) => {
         .catch(err => res.status(500).json({error:err}))
 })
 
+router.put('/update/:id', validate, (req, res) => {
+    Jewelry.update({
+        name: req.body.name,
+        description: req.body.description,
+        image: req.body.image,
+        price: req.body.price,
+        available: req.body.available
+    }, {where: { id: req.params.id }})
+    .then(jewelry => res.status(200).json(jewelry))
+    .catch(err => res.status(500).json(req.error))
+})
 module.exports = router;
