@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     available: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      defaultValue: true
     },
   }, {});
   Jewelry.associate = function(models) {
